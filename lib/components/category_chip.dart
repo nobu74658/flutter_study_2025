@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CategoryChip extends StatelessWidget {
-  const CategoryChip({super.key});
+  const CategoryChip({
+    super.key,
+    required this.label,
+    required this.iconData,
+  });
+
+  final String label;
+  final IconData iconData;
 
   @override
   Widget build(BuildContext context) {
@@ -11,16 +18,16 @@ class CategoryChip extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: () {},
-        child: const Padding(
-          padding: EdgeInsets.symmetric(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
             horizontal: 12,
             vertical: 8,
           ),
           child: Row(
             children: [
-              Icon(Icons.edit_document),
-              SizedBox(width: 8),
-              Text('LRN'),
+              Icon(iconData),
+              const SizedBox(width: 8),
+              Text(label),
             ],
           ),
         ),

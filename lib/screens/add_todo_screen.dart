@@ -11,6 +11,7 @@ class AddTodoScreen extends StatelessWidget {
         title: const Text('Create New Task'),
       ),
       body: ListView(
+        padding: const EdgeInsets.all(16),
         children: [
           Container(
             padding: const EdgeInsets.all(12),
@@ -26,9 +27,29 @@ class AddTodoScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
+          const Text(
+            'Category',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
           const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CategoryChip(),
+              CategoryChip(
+                label: 'LRN',
+                iconData: Icons.edit_document,
+              ),
+              CategoryChip(
+                label: 'WRK',
+                iconData: Icons.work,
+              ),
+              CategoryChip(
+                label: 'GEN',
+                iconData: Icons.home,
+              ),
             ],
           ),
         ],
