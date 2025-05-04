@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_study_2025/components/category_chip.dart';
 
 class AddTodoScreen extends StatelessWidget {
   const AddTodoScreen({super.key});
@@ -23,6 +24,12 @@ class AddTodoScreen extends StatelessWidget {
                 _TextField('Description'),
               ],
             ),
+          ),
+          const SizedBox(height: 16),
+          const Row(
+            children: [
+              CategoryChip(),
+            ],
           ),
         ],
       ),
