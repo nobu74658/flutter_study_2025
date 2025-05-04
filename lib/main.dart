@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_study_2025/components/todo_tile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,19 +26,10 @@ class TodoListScreen extends StatelessWidget {
         title: const Text('Todo App'),
       ),
       body: ListView(
-        children: [
-          ListTile(
-            leading: const CircleAvatar(
-              radius: 4,
-              backgroundColor: Colors.green,
-            ),
-            title: const Text('sample todo task'),
-            subtitle: const Text('18:00'),
-            trailing: Checkbox(
-              value: false,
-              onChanged: (value) {},
-            ),
-          ),
+        children: const [
+          TodoTile(),
+          TodoTile(),
+          TodoTile(),
         ],
       ),
       floatingActionButton: FloatingActionButton(
