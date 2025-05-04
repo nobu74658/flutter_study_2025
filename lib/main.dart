@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_2025/screens/todo_list_screen.dart';
+import 'package:flutter_study_2025/screens/add_todo_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: TodoListScreen(),
+      home: AddTodoScreen(),
     );
   }
 }
