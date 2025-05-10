@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_2025/components/category_chip.dart';
+import 'package:flutter_study_2025/screens/add_todo/components/add_todo_categories.dart';
 
 class AddTodoScreen extends StatelessWidget {
   const AddTodoScreen({super.key});
@@ -27,31 +27,7 @@ class AddTodoScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          const Text(
-            'Category',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 8),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CategoryChip(
-                label: 'LRN',
-                iconData: Icons.edit_document,
-              ),
-              CategoryChip(
-                label: 'WRK',
-                iconData: Icons.work,
-              ),
-              CategoryChip(
-                label: 'GEN',
-                iconData: Icons.home,
-              ),
-            ],
-          ),
+          const AddTodoCategories(),
         ],
       ),
     );
