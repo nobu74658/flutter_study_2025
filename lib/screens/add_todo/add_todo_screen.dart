@@ -11,6 +11,7 @@ class AddTodoScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final titleTextController = useTextEditingController();
+    final descriptionTextController = useTextEditingController();
 
     return Scaffold(
       appBar: AppBar(
@@ -24,6 +25,7 @@ class AddTodoScreen extends HookWidget {
               children: [
                 AddTodoInputs(
                   titleTextController: titleTextController,
+                  descriptionTextController: descriptionTextController,
                 ),
                 const SizedBox(height: 16),
                 const AddTodoCategories(),

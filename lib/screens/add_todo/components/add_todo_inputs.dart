@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AddTodoInputs extends StatelessWidget {
-  const AddTodoInputs({super.key, required this.titleTextController});
+  const AddTodoInputs({
+    super.key,
+    required this.titleTextController,
+    required this.descriptionTextController,
+  });
 
   final TextEditingController titleTextController;
+  final TextEditingController descriptionTextController;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +21,7 @@ class AddTodoInputs extends StatelessWidget {
         children: [
           _TextField('Title', titleTextController),
           const SizedBox(height: 8),
-          // const _TextField('Description'),
+          _TextField('Description', descriptionTextController),
         ],
       ),
     );
