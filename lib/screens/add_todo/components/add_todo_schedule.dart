@@ -6,12 +6,43 @@ class AddTodoSchedule extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
-        Column(
+        _ScheduleContainer(
+          title: 'Date',
+          value: 'dd/mm/yyyy',
+          iconData: Icons.calendar_month_rounded,
+        ),
+        _ScheduleContainer(
+          title: 'Time',
+          value: 'hh:mm',
+          iconData: Icons.timer_outlined,
+        ),
+      ],
+    );
+  }
+}
+
+class _ScheduleContainer extends StatelessWidget {
+  const _ScheduleContainer({
+    required this.title,
+    required this.value,
+    required this.iconData,
+  });
+
+  final String title;
+  final String value;
+  final IconData iconData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.only(right: 12.0),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Date', style: AppStyle.title),
+            Text(title, style: AppStyle.title),
             const SizedBox(height: 8),
             Material(
               color: Colors.grey.shade100,
@@ -19,13 +50,14 @@ class AddTodoSchedule extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               child: InkWell(
                 onTap: () {},
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   child: Row(
                     children: [
-                      Icon(Icons.calendar_today_outlined),
-                      SizedBox(width: 8),
-                      Text('dd/mm/yy'),
+                      Icon(iconData),
+                      const SizedBox(width: 8),
+                      Text(value),
                     ],
                   ),
                 ),
@@ -33,8 +65,7 @@ class AddTodoSchedule extends StatelessWidget {
             ),
           ],
         ),
-        const Column(),
-      ],
+      ),
     );
   }
 }
