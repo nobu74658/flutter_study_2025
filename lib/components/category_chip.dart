@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_study_2025/types/todo_category_type.dart';
 
 class CategoryChip extends StatelessWidget {
   const CategoryChip({
     super.key,
-    required this.label,
-    required this.iconData,
+    required this.category,
+    required this.selectedCategory,
+    required this.onTap,
   });
 
-  final String label;
-  final IconData iconData;
+  final TodoCategoryType category;
+  final TodoCategoryType selectedCategory;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
+    final isSelected = category == selectedCategory;
     return Material(
-      color: Colors.grey.shade300,
+      color: isSelected ? Theme.of(context).primaryColor : Colors.grey.shade300,
       borderRadius: BorderRadius.circular(8),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 12,
@@ -25,9 +29,9 @@ class CategoryChip extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Icon(iconData),
+              Icon(category.iconData),
               const SizedBox(width: 8),
-              Text(label),
+              Text(category.label),
             ],
           ),
         ),
