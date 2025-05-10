@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_study_2025/components/category_chip.dart';
+import 'package:flutter_study_2025/utils/styles.dart';
 
 class AddTodoCategories extends StatelessWidget {
   const AddTodoCategories({super.key});
@@ -11,10 +12,7 @@ class AddTodoCategories extends StatelessWidget {
       children: [
         Text(
           'Category',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+          style: AppStyle.title,
         ),
         SizedBox(height: 8),
         Row(
