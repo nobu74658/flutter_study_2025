@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AddTodoInputs extends StatelessWidget {
-  const AddTodoInputs({super.key});
+  const AddTodoInputs({super.key, required this.titleTextController});
+
+  final TextEditingController titleTextController;
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +12,11 @@ class AddTodoInputs extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.white,
       ),
-      child: const Column(
+      child: Column(
         children: [
-          _TextField('Title'),
-          SizedBox(height: 8),
-          _TextField('Description'),
+          _TextField('Title', titleTextController),
+          const SizedBox(height: 8),
+          // const _TextField('Description'),
         ],
       ),
     );
@@ -22,13 +24,15 @@ class AddTodoInputs extends StatelessWidget {
 }
 
 class _TextField extends StatelessWidget {
-  const _TextField(this.label);
+  const _TextField(this.label, this.textController);
 
   final String label;
+  final TextEditingController textController;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: textController,
       decoration: InputDecoration(
         filled: true,
         fillColor: Theme.of(context).scaffoldBackgroundColor,
