@@ -3,14 +3,20 @@ import 'package:flutter_study_2025/utils/styles.dart';
 import 'package:intl/intl.dart';
 
 class AddTodoSchedule extends StatelessWidget {
-  const AddTodoSchedule({super.key, required this.selectedDate});
+  const AddTodoSchedule({
+    super.key,
+    required this.selectedDate,
+    required this.selectedTime,
+  });
 
   final ValueNotifier<DateTime> selectedDate;
+  final ValueNotifier<TimeOfDay> selectedTime;
 
   @override
   Widget build(BuildContext context) {
     final dateFormatter = DateFormat('yyyy/MM/dd');
     final dateString = dateFormatter.format(selectedDate.value);
+    final timeString = selectedTime.value.format(context);
 
     return Row(
       children: [
@@ -24,14 +30,24 @@ class AddTodoSchedule extends StatelessWidget {
               firstDate: DateTime.now(),
               lastDate: DateTime.now().add(const Duration(days: 365)),
             );
-            print(result);
+            if (result != null) {
+              selectedDate.value = result;
+            }
           },
         ),
         _ScheduleContainer(
           title: 'Time',
-          value: 'hh:mm',
+          value: timeString,
           iconData: Icons.timer_outlined,
-          onTap: () {},
+          onTap: () async {
+            final result = await showTimePicker(
+              context: context,
+              initialTime: TimeOfDay.now(),
+            );
+            if (result != null) {
+              selectedTime.value = result;
+            }
+          },
         ),
       ],
     );
