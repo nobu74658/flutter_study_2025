@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class AddTodoBottomButtons extends StatelessWidget {
   const AddTodoBottomButtons({super.key, required this.onCreate});
@@ -17,7 +18,7 @@ class AddTodoBottomButtons extends StatelessWidget {
           children: [
             Expanded(
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () => context.pop(),
                 child: const Text('cancel'),
               ),
             ),

@@ -6,6 +6,7 @@ import 'package:flutter_study_2025/screens/add_todo/components/add_todo_categori
 import 'package:flutter_study_2025/screens/add_todo/components/add_todo_inputs.dart';
 import 'package:flutter_study_2025/screens/add_todo/components/add_todo_schedule.dart';
 import 'package:flutter_study_2025/types/todo_category_type.dart';
+import 'package:go_router/go_router.dart';
 import 'package:uuid/uuid.dart';
 
 class AddTodoScreen extends HookWidget {
@@ -54,6 +55,7 @@ class AddTodoScreen extends HookWidget {
                 'date': selectedDate.value,
                 'time': selectedTime.value.format(context),
               });
+              context.pop();
             },
           ),
         ],
