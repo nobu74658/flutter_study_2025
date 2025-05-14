@@ -54,6 +54,7 @@ class AddTodoScreen extends HookWidget {
                 'category': selectedCategory.value.value,
                 'date': selectedDate.value,
                 'time': selectedTime.value.format(context),
+                'isDone': false,
               });
               context.pop();
             },

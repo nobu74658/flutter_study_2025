@@ -23,10 +23,12 @@ class TodoListScreen extends StatelessWidget {
             children: [
               for (final todo in value.values.toList())
                 TodoTile(
+                  todoId: todo['todoId'] as String,
                   title: todo['title'] as String,
+                  description: todo['description'] as String,
                   date: todo['date'] as DateTime,
                   time: todo['time'] as String,
-                  isDone: false,
+                  isDone: (todo['isDone'] ?? false) as bool,
                   category:
                       TodoCategoryType.fromValue(todo['category'] as String),
                 ),
