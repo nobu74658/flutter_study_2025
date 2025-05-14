@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AddTodoBottomButtons extends StatelessWidget {
-  const AddTodoBottomButtons({super.key});
+  const AddTodoBottomButtons({super.key, required this.onCreate});
+
+  final void Function() onCreate;
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +18,13 @@ class AddTodoBottomButtons extends StatelessWidget {
             Expanded(
               child: OutlinedButton(
                 onPressed: () {},
-                child: const Text('create'),
+                child: const Text('cancel'),
               ),
             ),
             const SizedBox(width: 12),
             Expanded(
               child: FilledButton(
-                onPressed: () {},
+                onPressed: onCreate,
                 child: const Text('create'),
               ),
             ),
