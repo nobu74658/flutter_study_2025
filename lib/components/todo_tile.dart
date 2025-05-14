@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_study_2025/types/todo_category_type.dart';
 import 'package:intl/intl.dart';
 
 class TodoTile extends StatelessWidget {
@@ -8,12 +9,14 @@ class TodoTile extends StatelessWidget {
     required this.date,
     required this.time,
     required this.isDone,
+    required this.category,
   });
 
   final String title;
   final DateTime date;
   final String time;
   final bool isDone;
+  final TodoCategoryType category;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +24,9 @@ class TodoTile extends StatelessWidget {
     final dateString = dateFormatter.format(date);
 
     return ListTile(
-      leading: const CircleAvatar(
+      leading: CircleAvatar(
         radius: 4,
-        backgroundColor: Colors.green,
+        backgroundColor: category.color,
       ),
       title: Text(title),
       subtitle: Text('$dateString $time'),

@@ -16,23 +16,36 @@ class CategoryChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isSelected = category == selectedCategory;
+
     return Material(
-      color: isSelected ? Theme.of(context).primaryColor : Colors.grey.shade300,
+      color: Colors.grey.shade100,
       borderRadius: BorderRadius.circular(8),
       clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: onTap,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 12,
-            vertical: 8,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
+          border: Border.all(
+            color: isSelected ? category.color : Colors.transparent,
+            width: 2,
           ),
-          child: Row(
-            children: [
-              Icon(category.iconData),
-              const SizedBox(width: 8),
-              Text(category.label),
-            ],
+        ),
+        child: InkWell(
+          onTap: onTap,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 12,
+              vertical: 8,
+            ),
+            child: Row(
+              children: [
+                Icon(
+                  category.iconData,
+                  color: category.color,
+                ),
+                const SizedBox(width: 8),
+                Text(category.label),
+              ],
+            ),
           ),
         ),
       ),
