@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_2025/screens/add_todo/add_todo_screen.dart';
+import 'package:flutter_study_2025/rooter.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 late Box box;
@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: AddTodoScreen(),
+    return MaterialApp.router(
+      routerConfig: goRouter,
     );
   }
 }
