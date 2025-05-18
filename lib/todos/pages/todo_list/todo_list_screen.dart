@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_2025/todos/pages/components/todo_tile.dart';
 import 'package:flutter_study_2025/main.dart';
-import 'package:flutter_study_2025/todos/model/types/todo_category_type.dart';
+import 'package:flutter_study_2025/todos/model/entities/todo.dart';
+import 'package:flutter_study_2025/todos/pages/components/todo_tile.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -22,16 +22,7 @@ class TodoListScreen extends StatelessWidget {
           return ListView(
             children: [
               for (final todo in value.values.toList())
-                TodoTile(
-                  todoId: todo['todoId'] as String,
-                  title: todo['title'] as String,
-                  description: todo['description'] as String,
-                  date: todo['date'] as DateTime,
-                  time: todo['time'] as String,
-                  isDone: (todo['isDone'] ?? false) as bool,
-                  category:
-                      TodoCategoryType.fromValue(todo['category'] as String),
-                ),
+                TodoTile(todo: Todo.fromJson(todo)),
             ],
           );
         },

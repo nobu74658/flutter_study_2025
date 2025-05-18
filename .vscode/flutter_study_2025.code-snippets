@@ -95,7 +95,7 @@
             "},);",
             ]
         },
-        "Freezed Model Template": {
+        "freezed": {
             "prefix": "_entity",
             "body": [
               "import 'package:freezed_annotation/freezed_annotation.dart';",
@@ -113,5 +113,26 @@
               "}"
             ],
             "description": "Create a freezed model with json_serializable support using the current file name"
-          }
+          },
+          "converter": {
+            "prefix": "fconverter",
+            "body": [
+                "import 'package:freezed_annotation/freezed_annotation.dart';",
+                "",
+                "const ${1:${TM_FILENAME_BASE/(_)([a-zA-Z])/${2:/capitalize}/g}}Converter = ${2:${TM_FILENAME_BASE/(?:^|-|_|\\.)(\\w)/${1:/upcase}/g}}Converter();",
+                "",
+                "class ${2:${TM_FILENAME_BASE/(?:^|-|_|\\.)(\\w)/${1:/upcase}/g}}Converter implements JsonConverter<${4}, Object> {",
+                  " const ${2:${TM_FILENAME_BASE/(?:^|-|_|\\.)(\\w)/${1:/upcase}/g}}Converter();",
+                  "",
+                  "	@override",
+                  "	${4} fromJson(Object json) {",
+                "		if (json is ${4}) {}",
+                "		throw UnimplementedError('${2:${TM_FILENAME_BASE/(?:^|-|_|\\.)(\\w)/${1:/upcase}/g}}Converter.fromJson');",
+                  "	}",
+                  "",
+                  "	@override",
+                  "	Object toJson(${4} object) {};""}",
+                  "",
+            ],
+        }
 }
