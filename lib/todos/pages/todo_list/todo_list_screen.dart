@@ -27,7 +27,7 @@ class TodoListScreen extends StatelessWidget {
                     'todoId': todo['todoId'] as String,
                     'title': todo['title'] as String,
                     'description': todo['description'] as String,
-                    'date': todo['date'] as DateTime,
+                    'date': todo['date'] as String,
                     'time': todo['time'] as String,
                     'isDone': (todo['isDone'] ?? false) as bool,
                     'category': todo['category'] as String,

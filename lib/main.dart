@@ -9,7 +9,7 @@ Future<void> main() async {
 
   await Hive.initFlutter();
 
-  box = await Hive.openBox('hogehogehoge');
+  box = await Hive.openBox('v2');
 
   runApp(const MyApp());
 }
