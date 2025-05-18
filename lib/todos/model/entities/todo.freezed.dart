@@ -20,7 +20,7 @@ mixin _$Todo {
   String get description;
   @todoCategoryTypeStringConverterConverter
   TodoCategoryType get category;
-  DateTime get date;
+  String get date;
   String get time;
   bool get isDone;
 
@@ -71,7 +71,7 @@ abstract mixin class $TodoCopyWith<$Res> {
       String title,
       String description,
       @todoCategoryTypeStringConverterConverter TodoCategoryType category,
-      DateTime date,
+      String date,
       String time,
       bool isDone});
 }
@@ -116,7 +116,7 @@ class _$TodoCopyWithImpl<$Res> implements $TodoCopyWith<$Res> {
       date: null == date
           ? _self.date
           : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       time: null == time
           ? _self.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -152,7 +152,7 @@ class _Todo implements Todo {
   @todoCategoryTypeStringConverterConverter
   final TodoCategoryType category;
   @override
-  final DateTime date;
+  final String date;
   @override
   final String time;
   @override
@@ -211,7 +211,7 @@ abstract mixin class _$TodoCopyWith<$Res> implements $TodoCopyWith<$Res> {
       String title,
       String description,
       @todoCategoryTypeStringConverterConverter TodoCategoryType category,
-      DateTime date,
+      String date,
       String time,
       bool isDone});
 }
@@ -256,7 +256,7 @@ class __$TodoCopyWithImpl<$Res> implements _$TodoCopyWith<$Res> {
       date: null == date
           ? _self.date
           : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       time: null == time
           ? _self.time
           : time // ignore: cast_nullable_to_non_nullable

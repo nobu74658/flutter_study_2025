@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_study_2025/main.dart';
 import 'package:flutter_study_2025/todos/model/entities/todo.dart';
-import 'package:intl/intl.dart';
 
 class TodoTile extends StatelessWidget {
   const TodoTile({
@@ -13,9 +12,6 @@ class TodoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dateFormatter = DateFormat('yyyy/MM/dd');
-    final dateString = dateFormatter.format(todo.date);
-
     return ListTile(
       onTap: () {
         final newTodo = todo.copyWith(isDone: !todo.isDone);
@@ -31,7 +27,7 @@ class TodoTile extends StatelessWidget {
           decoration: todo.isDone ? TextDecoration.lineThrough : null,
         ),
       ),
-      subtitle: Text('$dateString ${todo.time}'),
+      subtitle: Text('${todo.date} ${todo.time}'),
       trailing: Checkbox(
         value: todo.isDone,
         onChanged: (value) {},

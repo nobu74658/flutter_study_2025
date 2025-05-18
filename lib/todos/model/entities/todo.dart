@@ -13,7 +13,7 @@ abstract class Todo with _$Todo {
     required String description,
     @todoCategoryTypeStringConverterConverter
     required TodoCategoryType category,
-    required DateTime date,
+    required String date,
     required String time,
     required bool isDone,
   }) = _Todo;
