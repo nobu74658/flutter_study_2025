@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_study_2025/common/rooter.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -9,9 +10,13 @@ Future<void> main() async {
 
   await Hive.initFlutter();
 
-  box = await Hive.openBox('v2');
+  box = await Hive.openBox('v4');
 
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
