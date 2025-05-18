@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_study_2025/main.dart';
-import 'package:flutter_study_2025/types/todo_category_type.dart';
+import 'package:flutter_study_2025/todos/model/types/todo_category_type.dart';
 import 'package:intl/intl.dart';
 
 class TodoTile extends StatelessWidget {

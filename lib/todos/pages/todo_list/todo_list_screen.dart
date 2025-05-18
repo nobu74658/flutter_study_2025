@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_2025/components/todo_tile.dart';
+import 'package:flutter_study_2025/todos/pages/components/todo_tile.dart';
 import 'package:flutter_study_2025/main.dart';
-import 'package:flutter_study_2025/types/todo_category_type.dart';
+import 'package:flutter_study_2025/todos/model/types/todo_category_type.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 

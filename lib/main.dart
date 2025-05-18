@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_2025/rooter.dart';
+import 'package:flutter_study_2025/common/rooter.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 late Box box;

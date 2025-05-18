@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_2025/components/category_chip.dart';
-import 'package:flutter_study_2025/types/todo_category_type.dart';
-import 'package:flutter_study_2025/utils/styles.dart';
+import 'package:flutter_study_2025/todos/pages/components/category_chip.dart';
+import 'package:flutter_study_2025/todos/model/types/todo_category_type.dart';
+import 'package:flutter_study_2025/common/styles.dart';
 
 class AddTodoCategories extends StatelessWidget {
   const AddTodoCategories({super.key, required this.selectedCategory});

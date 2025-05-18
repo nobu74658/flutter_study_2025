@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_study_2025/main.dart';
-import 'package:flutter_study_2025/screens/add_todo/components/add_todo_bottom_buttons.dart';
-import 'package:flutter_study_2025/screens/add_todo/components/add_todo_categories.dart';
-import 'package:flutter_study_2025/screens/add_todo/components/add_todo_inputs.dart';
-import 'package:flutter_study_2025/screens/add_todo/components/add_todo_schedule.dart';
-import 'package:flutter_study_2025/types/todo_category_type.dart';
+import 'package:flutter_study_2025/todos/pages/add_todo/components/add_todo_bottom_buttons.dart';
+import 'package:flutter_study_2025/todos/pages/add_todo/components/add_todo_categories.dart';
+import 'package:flutter_study_2025/todos/pages/add_todo/components/add_todo_inputs.dart';
+import 'package:flutter_study_2025/todos/pages/add_todo/components/add_todo_schedule.dart';
+import 'package:flutter_study_2025/todos/model/types/todo_category_type.dart';
 import 'package:go_router/go_router.dart';
 import 'package:uuid/uuid.dart';
 

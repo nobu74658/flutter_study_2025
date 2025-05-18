@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_2025/utils/styles.dart';
+import 'package:flutter_study_2025/common/styles.dart';
 import 'package:intl/intl.dart';
 
 class AddTodoSchedule extends StatelessWidget {

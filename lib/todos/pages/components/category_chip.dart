@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study_2025/types/todo_category_type.dart';
+import 'package:flutter_study_2025/todos/model/types/todo_category_type.dart';
 
 class CategoryChip extends StatelessWidget {
   const CategoryChip({
