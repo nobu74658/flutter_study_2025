@@ -1,3 +1,4 @@
+import 'package:flutter_study_2025/todos/model/converter/date_time_string_converter.dart';
 import 'package:flutter_study_2025/todos/model/converter/todo_category_type_string_converter.dart';
 import 'package:flutter_study_2025/todos/model/types/todo_category_type.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -13,7 +14,7 @@ abstract class Todo with _$Todo {
     required String description,
     @todoCategoryTypeStringConverterConverter
     required TodoCategoryType category,
-    required DateTime date,
+    @dateTimeStringConverterConverter DateTime? date,
     required String time,
     required bool isDone,
   }) = _Todo;

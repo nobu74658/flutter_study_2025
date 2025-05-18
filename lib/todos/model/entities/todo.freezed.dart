@@ -20,7 +20,8 @@ mixin _$Todo {
   String get description;
   @todoCategoryTypeStringConverterConverter
   TodoCategoryType get category;
-  DateTime get date;
+  @dateTimeStringConverterConverter
+  DateTime? get date;
   String get time;
   bool get isDone;
 
@@ -71,7 +72,7 @@ abstract mixin class $TodoCopyWith<$Res> {
       String title,
       String description,
       @todoCategoryTypeStringConverterConverter TodoCategoryType category,
-      DateTime date,
+      @dateTimeStringConverterConverter DateTime? date,
       String time,
       bool isDone});
 }
@@ -92,7 +93,7 @@ class _$TodoCopyWithImpl<$Res> implements $TodoCopyWith<$Res> {
     Object? title = null,
     Object? description = null,
     Object? category = null,
-    Object? date = null,
+    Object? date = freezed,
     Object? time = null,
     Object? isDone = null,
   }) {
@@ -113,10 +114,10 @@ class _$TodoCopyWithImpl<$Res> implements $TodoCopyWith<$Res> {
           ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as TodoCategoryType,
-      date: null == date
+      date: freezed == date
           ? _self.date
           : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       time: null == time
           ? _self.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -137,7 +138,7 @@ class _Todo implements Todo {
       required this.title,
       required this.description,
       @todoCategoryTypeStringConverterConverter required this.category,
-      required this.date,
+      @dateTimeStringConverterConverter this.date,
       required this.time,
       required this.isDone});
   factory _Todo.fromJson(Map<String, dynamic> json) => _$TodoFromJson(json);
@@ -152,7 +153,8 @@ class _Todo implements Todo {
   @todoCategoryTypeStringConverterConverter
   final TodoCategoryType category;
   @override
-  final DateTime date;
+  @dateTimeStringConverterConverter
+  final DateTime? date;
   @override
   final String time;
   @override
@@ -211,7 +213,7 @@ abstract mixin class _$TodoCopyWith<$Res> implements $TodoCopyWith<$Res> {
       String title,
       String description,
       @todoCategoryTypeStringConverterConverter TodoCategoryType category,
-      DateTime date,
+      @dateTimeStringConverterConverter DateTime? date,
       String time,
       bool isDone});
 }
@@ -232,7 +234,7 @@ class __$TodoCopyWithImpl<$Res> implements _$TodoCopyWith<$Res> {
     Object? title = null,
     Object? description = null,
     Object? category = null,
-    Object? date = null,
+    Object? date = freezed,
     Object? time = null,
     Object? isDone = null,
   }) {
@@ -253,10 +255,10 @@ class __$TodoCopyWithImpl<$Res> implements _$TodoCopyWith<$Res> {
           ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as TodoCategoryType,
-      date: null == date
+      date: freezed == date
           ? _self.date
           : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
       time: null == time
           ? _self.time
           : time // ignore: cast_nullable_to_non_nullable

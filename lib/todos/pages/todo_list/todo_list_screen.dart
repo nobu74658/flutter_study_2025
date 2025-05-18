@@ -22,7 +22,17 @@ class TodoListScreen extends StatelessWidget {
           return ListView(
             children: [
               for (final todo in value.values.toList())
-                TodoTile(todo: Todo.fromJson(todo)),
+                TodoTile(
+                  todo: Todo.fromJson({
+                    'todoId': todo['todoId'] as String,
+                    'title': todo['title'] as String,
+                    'description': todo['description'] as String,
+                    'date': todo['date'] as DateTime,
+                    'time': todo['time'] as String,
+                    'isDone': (todo['isDone'] ?? false) as bool,
+                    'category': todo['category'] as String,
+                  }),
+                ),
             ],
           );
         },

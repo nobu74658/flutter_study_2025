@@ -14,7 +14,7 @@ class TodoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dateFormatter = DateFormat('yyyy/MM/dd');
-    final dateString = dateFormatter.format(todo.date);
+    final dateString = dateFormatter.format(todo.date ?? DateTime.now());
 
     return ListTile(
       onTap: () {
